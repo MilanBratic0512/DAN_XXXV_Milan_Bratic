@@ -32,6 +32,7 @@ namespace Zadatak_1
                     t.Name = "Player_" + (i + 1);
                     //adding to the list
                     threadList.Add(t);
+
                 }
             }
             catch (System.OutOfMemoryException)
@@ -93,11 +94,11 @@ namespace Zadatak_1
             do
             {
                 input = Console.ReadLine();
-                if (!uint.TryParse(input, out players))
+                if (!(uint.TryParse(input, out players) && players > 0))
                 {
                     Console.WriteLine("Wrong entry! Try again.");
                 }
-            } while (!uint.TryParse(input, out players));
+            } while (!(uint.TryParse(input, out players) && players > 0));
             Console.WriteLine("Input the number to be guessed: ");
             string input2 = null;
             uint number = 0;
